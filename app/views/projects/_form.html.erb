@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :ref_id %>
-    <%= form.text_field :ref_id %>
+  <div class="field mb-3">
+    <%= form.label :ref_id, "Reference Id" %>
+    <%= form.text_field :ref_id, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+  <div class="field mb-3">
+    <%= form.label :description, "Description" %>
+    <%= form.text_field :description, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :site_measurement %>
-    <%= form.text_field :site_measurement %>
+  <div class="field mb-3">
+    <%= form.label :site_measurement, "Site Measurement" %>
+    <%= form.text_field :site_measurement, class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :progress %>
-    <%= form.text_field :progress %>
+  <div class="field mb-3">
+    <%= form.label :progress, "Progress" %>
+    <%= form.text_field :progress, class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type %>
+  <div class="field mb-3">
+    <%= form.label :type, "Work Type" %>
+    <%= form.text_field :type, class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :cost %>
-    <%= form.text_field :cost %>
+  <div class="field mb-3">
+    <%= form.label :cost, "Project Cost" %>
+    <%= form.text_field :cost, class: "form-control"%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create Project", class: "w-100 btn btn-primary" %>
   </div>
 <% end %>

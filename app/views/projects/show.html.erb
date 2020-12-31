@@ -4,7 +4,7 @@
   Project Details
 </h1>
 
-<div class="row mb-5">
+<div class="row mb-5 text-muted">
   <div class="col-md-6 mx-auto bg-light py-4 text-center">
     <p>
       <strong>Ref:</strong>
@@ -34,6 +34,11 @@
     <p>
       <strong>Cost:</strong>
       <%= @project.cost %>
+    </p>
+
+    <p>
+      <strong>Client:</strong>
+      <%= link_to @project.client.name %>
     </p>
 
     <!-- <%= link_to 'Edit', edit_project_path(@project) %> | -->

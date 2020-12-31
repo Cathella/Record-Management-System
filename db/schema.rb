@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 2020_12_31_115714) do
     t.string "progress"
     t.string "work_type"
     t.string "cost"
+    t.integer "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_projects_on_client_id"
   end
 
 end

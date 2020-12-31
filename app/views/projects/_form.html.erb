@@ -1,4 +1,4 @@
-<%= form_with(model: project, local: true) do |form| %>
+<%= form_with(model: project, local: true, class: "text-muted") do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -14,6 +14,11 @@
   <div class="field mb-3">
     <%= form.label :ref_id, "Reference Id" %>
     <%= form.text_field :ref_id, class: "form-control" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :client_id, "Choose Client" %>
+    <%= form.collection_select(:client_id, Client.all, :id, :name, {}, class: "custom-select") %>
   </div>
 
   <div class="field mb-3">

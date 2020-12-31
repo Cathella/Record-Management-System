@@ -1,0 +1,37 @@
+<%= form_with(model: client, local: true, class: "text-muted") do |form| %>
+  <% if client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :name, "Customer Name" %>
+    <%= form.text_field :name, class: "form-control"%>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :phone, "Phone Number" %>
+    <%= form.text_field :phone, class: "form-control"%>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :location, "Location" %>
+    <%= form.text_field :location, class: "form-control"%>
+  </div>
+
+  <div class="field, mb-3">
+    <%= form.label :payment, "Payment" %>
+    <%= form.text_field :payment, class: "form-control"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add Client", class: "w-100 btn btn-primary"%>
+  </div>
+<% end %>

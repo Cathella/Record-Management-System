@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="font-weight-bold mb-5 text-center">
+  Client Details
+</h1>
+
+<div class="row mb-5 text-muted">
+  <div class="col-md-6 mx-auto bg-light py-4 text-center">
+    <p>
+      <strong>Name:</strong>
+      <%= @client.name %>
+    </p>
+
+    <p>
+      <strong>Phone:</strong>
+      <%= @client.phone %>
+    </p>
+
+    <p>
+      <strong>Location:</strong>
+      <%= @client.location %>
+    </p>
+
+    <p>
+      <strong>Payment:</strong>
+      <%= @client.payment %>
+    </p>
+
+    <h4 class="border-top pt-3 mt-5 font-weight-bold">Projects:</h4>
+    
+    <p>
+      <ul>
+      <% @projects.each do |project| %>
+        <li>
+          <%= link_to project.ref_id, project, class: "text-info" %>
+        </li>
+      <% end %>
+      </ul>
+    </p>
+  </div>
+</div>  

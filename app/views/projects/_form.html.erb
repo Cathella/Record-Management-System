@@ -1,0 +1,52 @@
+<%= form_with(model: project, local: true, class: "text-muted") do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.label :ref_id, "Reference Id" %>
+    <%= form.text_field :ref_id, class: "form-control" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :client_id, "Choose Client" %>
+    <%= form.collection_select(:client_id, Client.all, :id, :name, {}, class: "custom-select") %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :description, "Description" %>
+    <%= form.text_field :description, class: "form-control" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :site_measurement, "Site Measurement" %>
+    <%= form.text_field :site_measurement, class: "form-control"%>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :progress, "Progress" %>
+    <%= form.text_field :progress, class: "form-control"%>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :work_type, "Work Type" %>
+    <%= form.text_field :work_type, class: "form-control"%>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :cost, "Project Cost" %>
+    <%= form.text_field :cost, class: "form-control"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Create Project", class: "w-100 btn btn-primary" %>
+  </div>
+<% end %>

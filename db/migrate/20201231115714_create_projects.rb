@@ -5,7 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :description
       t.string :site_measurement
       t.string :progress
-      t.string :type
+      t.string :work_type
       t.string :cost
 
       t.timestamps

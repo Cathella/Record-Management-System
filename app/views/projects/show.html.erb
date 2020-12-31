@@ -1,34 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Ref:</strong>
-  <%= @project.ref_id %>
-</p>
+<h1 class="font-weight-bold mb-5 text-center">
+  Project Details
+</h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+<div class="row mb-5">
+  <div class="col-md-6 mx-auto bg-light py-4 text-center">
+    <p>
+      <strong>Ref:</strong>
+      <%= @project.ref_id %>
+    </p>
 
-<p>
-  <strong>Site measurement:</strong>
-  <%= @project.site_measurement %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @project.description %>
+    </p>
 
-<p>
-  <strong>Progress:</strong>
-  <%= @project.progress %>
-</p>
+    <p>
+      <strong>Site measurement:</strong>
+      <%= @project.site_measurement %>
+    </p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @project.type %>
-</p>
+    <p>
+      <strong>Progress:</strong>
+      <%= @project.progress %>
+    </p>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @project.cost %>
-</p>
+    <p>
+      <strong>Type:</strong>
+      <%= @project.work_type %>
+    </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+    <p>
+      <strong>Cost:</strong>
+      <%= @project.cost %>
+    </p>
+
+    <!-- <%= link_to 'Edit', edit_project_path(@project) %> | -->
+  </div>
+</div>

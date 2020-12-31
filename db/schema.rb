@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_12_31_115714) do
     t.string "description"
     t.string "site_measurement"
     t.string "progress"
-    t.string "type"
+    t.string "work_type"
     t.string "cost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ref:</strong>
+  <%= @project.ref_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Site measurement:</strong>
+  <%= @project.site_measurement %>
+</p>
+
+<p>
+  <strong>Progress:</strong>
+  <%= @project.progress %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @project.type %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @project.cost %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

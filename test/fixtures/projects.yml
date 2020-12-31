@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ref_id: MyString
+  description: MyString
+  site_measurement: MyString
+  progress: MyString
+  type: 
+  cost: MyString
+
+two:
+  ref_id: MyString
+  description: MyString
+  site_measurement: MyString
+  progress: MyString
+  type: 
+  cost: MyString

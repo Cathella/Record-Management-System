@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bill from email:</strong>
+  <%= @invoice.bill_from_email %>
+</p>
+
+<p>
+  <strong>Bill from name:</strong>
+  <%= @invoice.bill_from_name %>
+</p>
+
+<p>
+  <strong>Bill to email:</strong>
+  <%= @invoice.bill_to_email %>
+</p>
+
+<p>
+  <strong>Bill to name:</strong>
+  <%= @invoice.bill_to_name %>
+</p>
+
+<p>
+  <strong>Item ref:</strong>
+  <%= @invoice.item_ref %>
+</p>
+
+<p>
+  <strong>Item type:</strong>
+  <%= @invoice.item_type %>
+</p>
+
+<p>
+  <strong>Item qty:</strong>
+  <%= @invoice.item_qty %>
+</p>
+
+<p>
+  <strong>Item rate:</strong>
+  <%= @invoice.item_rate %>
+</p>
+
+<p>
+  <strong>Item price:</strong>
+  <%= @invoice.item_price %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @invoice.discount %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @invoice.tax %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>

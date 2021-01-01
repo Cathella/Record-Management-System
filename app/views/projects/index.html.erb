@@ -9,11 +9,11 @@
   <table class="table table-hover mb-5" style="min-width: 690px">
     <thead class="text-muted thead-light">
       <tr>
-        <th>Ref</th>
+        <th>Ref ID</th>
         <th>Progress</th>
-        <th>Type</th>
+        <th>Work Type</th>
         <th>Client</th>
-        <th colspan="3">Actions</th>
+        <th colspan="3" class="text-right">Actions</th>
       </tr>
     </thead>
 
@@ -28,6 +28,7 @@
           <td><%= link_to project.client.name, class: "text-info" %></td>
           <td class="text-right">
             <%= link_to 'Show', project, class: "btn btn-info mr-2" %>
+            <%= link_to 'Create Invoice', new_invoice_path, class: "btn btn-primary mr-2" %>
             <%= link_to 'Delete', project, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
           <td></td>

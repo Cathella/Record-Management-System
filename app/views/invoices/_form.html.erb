@@ -11,62 +11,91 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :bill_from_email %>
-    <%= form.text_field :bill_from_email %>
-  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="border px-5 py-4 mb-5">
+        <div class="row border-bottom pb-5">
+          <div class="col-md-6">
+            <div class="field">
+              <%= form.label :bill_from_email, "Bill from", class: "mb-3" %>
+              <%= form.text_field :bill_from_email, placeholder: "Email", class: "form-control bg-light" %>
+            </div>
 
-  <div class="field">
-    <%= form.label :bill_from_name %>
-    <%= form.text_field :bill_from_name %>
-  </div>
+            <div class="field">
+              <%= form.text_field :bill_from_name, placeholder: "Who is this invoice from?", class: "form-control mt-3 bg-light" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="field">
+              <%= form.label :bill_to_email, "Bill to", class: "mb-3" %>
+              <%= form.text_field :bill_to_email, placeholder: "Email", class: "form-control bg-light" %>
+            </div>
 
-  <div class="field">
-    <%= form.label :bill_to_email %>
-    <%= form.text_field :bill_to_email %>
-  </div>
+            <div class="field">
+              <%= form.text_field :bill_to_name, placeholder: "Who is this invoice to?", class: "form-control mt-3 bg-light" %>
+            </div>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :bill_to_name %>
-    <%= form.text_field :bill_to_name %>
-  </div>
+        <div class="row pt-4  border-bottom pb-5">
+          <div class="col-md-2">
+            <div class="field">
+              <%= form.label :item_ref, "Ref ID" %>
+              <%= form.text_field :item_ref, class: "form-control bg-light" %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="field">
+              <%= form.label :item_type, "Work Type" %>
+              <%= form.text_field :item_type, class: "form-control bg-light" %>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="field">
+              <%= form.label :item_qty, "Qty" %>
+              <%= form.text_field :item_qty, class: "form-control bg-light"%>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="field">
+              <%= form.label :item_rate, "Rate" %>
+              <%= form.text_field :item_rate, class: "form-control bg-light" %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="field">
+              <%= form.label :item_price, "Price" %>
+              <%= form.text_field :item_price, class: "form-control bg-light" %>
+            </div>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= form.label :item_ref %>
-    <%= form.text_field :item_ref %>
-  </div>
-
-  <div class="field">
-    <%= form.label :item_type %>
-    <%= form.text_field :item_type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :item_qty %>
-    <%= form.text_field :item_qty %>
-  </div>
-
-  <div class="field">
-    <%= form.label :item_rate %>
-    <%= form.text_field :item_rate %>
-  </div>
-
-  <div class="field">
-    <%= form.label :item_price %>
-    <%= form.text_field :item_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :discount %>
-    <%= form.text_field :discount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tax %>
-    <%= form.text_field :tax %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+        <div class="row pt-5 mb-4">
+          <div class="col-md-3">
+            <div class="field">
+              <%= form.text_field :discount, placeholder: "Discount", class: "form-control bg-light" %>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="field">
+              <%= form.text_field :tax, placeholder: "Tax", class: "form-control bg-light" %>
+            </div>
+          </div>
+          <div class="col-md-2 text-right">
+              Total:
+          </div>
+          <div class="col-md-4 text-center font-weight-bold">
+              Ugx. 0
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="actions mt-5">
+        <%= form.submit "Create New Invoice", class: "form-control btn btn-primary" %>
+      </div>
+      <!--<a href="#" class="btn btn-light border mt-3 form-control">Preview Invoice</a>
+      <a href="#" class="btn btn-info mt-3 form-control">Download Invoice</a> -->
+    </div>
   </div>
 <% end %>

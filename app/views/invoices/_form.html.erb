@@ -18,51 +18,35 @@
           <div class="col-md-6">
             <div class="field">
               <%= form.label :bill_from_email, "Bill from", class: "mb-3" %>
-              <%= form.text_field :bill_from_email, placeholder: "Email", class: "form-control bg-light" %>
+              <%= form.text_field :bill_from_email, placeholder: "Email", class: "form-control bg-light", value: "clients@decok.design" %>
             </div>
 
             <div class="field">
-              <%= form.text_field :bill_from_name, placeholder: "Who is this invoice from?", class: "form-control mt-3 bg-light" %>
+              <%= form.text_field :bill_from_name, placeholder: "Who is this invoice from?", class: "form-control mt-3 bg-light", value: "Decok Interiors" %>
             </div>
           </div>
           <div class="col-md-6">
             <div class="field">
-              <%= form.label :bill_to_email, "Bill to", class: "mb-3" %>
-              <%= form.text_field :bill_to_email, placeholder: "Email", class: "form-control bg-light" %>
-            </div>
-
-            <div class="field">
-              <%= form.text_field :bill_to_name, placeholder: "Who is this invoice to?", class: "form-control mt-3 bg-light" %>
+              <%= form.label :notes, "Notes", class: "mb-3" %>
+              <%= form.text_area :notes, placeholder: "Comments about the project", class: "form-control bg-light textarea-height" %>
             </div>
           </div>
         </div>
 
         <div class="row pt-4  border-bottom pb-5">
-          <div class="col-md-2">
+          <div class="col-md-4">
             <div class="field">
-              <%= form.label :item_ref, "Ref ID" %>
-              <%= form.text_field :item_ref, class: "form-control bg-light" %>
+              <%= form.label :item_ref, "Project" %>
+              <%= form.collection_select(:project_id, Project.all, :id, :ref_id, {}, class: "custom-select bg-light") %>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="field">
-              <%= form.label :item_type, "Work Type" %>
-              <%= form.text_field :item_type, class: "form-control bg-light" %>
-            </div>
-          </div>
-          <div class="col-md-2">
+          <div class="col-md-4">
             <div class="field">
               <%= form.label :item_qty, "Qty" %>
               <%= form.text_field :item_qty, class: "form-control bg-light"%>
             </div>
           </div>
-          <div class="col-md-2">
-            <div class="field">
-              <%= form.label :item_rate, "Rate" %>
-              <%= form.text_field :item_rate, class: "form-control bg-light" %>
-            </div>
-          </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div class="field">
               <%= form.label :item_price, "Price" %>
               <%= form.text_field :item_price, class: "form-control bg-light" %>

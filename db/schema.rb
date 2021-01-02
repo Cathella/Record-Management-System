@@ -24,17 +24,15 @@ ActiveRecord::Schema.define(version: 2021_01_01_151559) do
   create_table "invoices", force: :cascade do |t|
     t.string "bill_from_email"
     t.string "bill_from_name"
-    t.string "bill_to_email"
-    t.string "bill_to_name"
-    t.string "item_ref"
-    t.string "item_type"
     t.integer "item_qty"
-    t.integer "item_rate"
     t.integer "item_price"
     t.string "discount"
+    t.string "notes"
     t.string "tax"
+    t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_invoices_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|

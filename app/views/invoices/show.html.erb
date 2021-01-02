@@ -11,23 +11,18 @@
 </p>
 
 <p>
-  <strong>Bill to email:</strong>
-  <%= @invoice.bill_to_email %>
+  <strong>Client:</strong>
+  <%= @invoice.project.client.name %>
 </p>
 
 <p>
-  <strong>Bill to name:</strong>
-  <%= @invoice.bill_to_name %>
+  <strong>Project ref:</strong>
+  <%= @invoice.project.ref_id %>
 </p>
 
 <p>
-  <strong>Item ref:</strong>
-  <%= @invoice.item_ref %>
-</p>
-
-<p>
-  <strong>Item type:</strong>
-  <%= @invoice.item_type %>
+  <strong>Work Type:</strong>
+  <%= @invoice.project.work_type %>
 </p>
 
 <p>
@@ -36,13 +31,13 @@
 </p>
 
 <p>
-  <strong>Item rate:</strong>
-  <%= @invoice.item_rate %>
+  <strong>Item price:</strong>
+  <%= @invoice.item_price %>
 </p>
 
 <p>
-  <strong>Item price:</strong>
-  <%= @invoice.item_price %>
+  <strong>Notes:</strong>
+  <%= @invoice.notes %>
 </p>
 
 <p>

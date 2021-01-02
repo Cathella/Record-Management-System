@@ -1,47 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Invoices</h1>
+<div class="d-flex justify-content-between align-items-center">
+  <h1 class="font-weight-bold mb-5 text-primary">Invoice <br>Records</h1>
+  <%= link_to '<i class="fas fa-plus mr-3"></i>New Invoice'.html_safe, new_invoice_path, class: "btn btn-primary" %>
+</div>
 
-<table>
-  <thead>
+<table class="table table-hover mb-5">
+  <thead class="thead-light">
     <tr>
-      <th>Bill from email</th>
-      <th>Bill from name</th>
-      <th>Bill to email</th>
-      <th>Bill to name</th>
-      <th>Item ref</th>
-      <th>Item type</th>
-      <th>Item qty</th>
-      <th>Item rate</th>
-      <th>Item price</th>
-      <th>Discount</th>
-      <th>Tax</th>
-      <th colspan="3"></th>
+      <th>No.</th>
+      <th>Date</th>
+      <th>To</th>
+      <th>Status</th>
+      <th>Total</th>
+      <th colspan="3" class="text-right">Actions</th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="text-muted">
     <% @invoices.each do |invoice| %>
       <tr>
-        <td><%= invoice.bill_from_email %></td>
-        <td><%= invoice.bill_from_name %></td>
-        <td><%= invoice.bill_to_email %></td>
-        <td><%= invoice.bill_to_name %></td>
-        <td><%= invoice.item_ref %></td>
-        <td><%= invoice.item_type %></td>
-        <td><%= invoice.item_qty %></td>
-        <td><%= invoice.item_rate %></td>
-        <td><%= invoice.item_price %></td>
-        <td><%= invoice.discount %></td>
-        <td><%= invoice.tax %></td>
-        <td><%= link_to 'Show', invoice %></td>
-        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= invoice.id %></td>
+        <td><%= invoice.created_at.strftime('%d/%m/%Y') %></td>
+        <td><%= invoice.project.client.name %></td>
+        <td></td>
+        <td></td>
+        <td class="text-right">
+          <%= link_to 'Show', invoice, class: "btn btn-info mr-2"%>
+          <%= link_to 'Destroy', invoice, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Invoice', new_invoice_path %>

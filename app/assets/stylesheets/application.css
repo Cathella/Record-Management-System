@@ -2,3 +2,7 @@ body {
   font-family: 'Nunito', sans-serif;
   font-size: 1.15em;
 }
+
+.textarea-height {
+  height: 92px !important;
+}

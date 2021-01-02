@@ -46,6 +46,11 @@
     <%= form.text_field :cost, class: "form-control"%>
   </div>
 
+  <div class="field mb-3">
+    <%= form.label :assigned, "Assigned To" %>
+    <%= form.text_field :assigned, class: "form-control"%>
+  </div>
+
   <div class="actions">
     <%= form.submit "Create Project", class: "w-100 btn btn-primary" %>
   </div>

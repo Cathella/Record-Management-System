@@ -7,6 +7,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :progress
       t.string :work_type
       t.string :cost
+      t.string :assigned
       t.references :client, foreign_key: :true
 
       t.timestamps

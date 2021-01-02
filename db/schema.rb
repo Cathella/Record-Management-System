@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 2021_01_01_151559) do
     t.string "bill_from_name"
     t.integer "item_qty"
     t.integer "item_price"
-    t.string "discount"
+    t.integer "discount"
     t.string "notes"
-    t.string "tax"
+    t.integer "tax"
     t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

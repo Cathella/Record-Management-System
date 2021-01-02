@@ -5,9 +5,9 @@ class CreateInvoices < ActiveRecord::Migration[5.2]
       t.string :bill_from_name
       t.integer :item_qty
       t.integer :item_price
-      t.string :discount
+      t.integer :discount
       t.string :notes
-      t.string :tax
+      t.integer :tax
       t.references :project, foreign_key: :true
 
       t.timestamps

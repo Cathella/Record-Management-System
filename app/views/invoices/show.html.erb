@@ -1,6 +1,106 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<table cellpadding="0" cellspacing="0" class="table mb-5">
+  <tr class="top">
+    <td colspan="4" class="border-0">
+      <table class="table">
+        <tr>
+          <td class="title border-0">
+            <h2 class="mt-5">Decok Interiors</h2>
+          </td>
+          <td class="text-right border-0">
+            Invoice #: <b>00<%= @invoice.id %></b>
+            <br>
+            Created: <b><%= @invoice.created_at.strftime('%d/%m/%Y') %></b>
+            <br>
+            Due: <b><%= (@invoice.created_at + 1.month).strftime('%d/%m/%Y') %></b>
+            <br>
+            Status: <span class=""></span>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr class="information">
+    <td colspan="4">
+      <table class="table">
+        <tr>
+          <td class="border-0">
+            <b><%= @invoice.bill_from_name %></b><br>
+            Naalya, Uganda<br>
+            <i class="far fa-envelope"></i> <%= @invoice.bill_from_email %><br>
+            <i class="fas fa-phone"></i> 0393236050
+          </td>
+          <td class="text-right border-0">
+            <b><%= @invoice.project.client.name %></b><br>
+            <%= @invoice.project.client.location %><br>
+            <i class="far fa-envelope"></i> <%= @invoice.project.client.email %><br>
+            <i class="fas fa-phone"></i> <%= @invoice.project.client.phone %>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr class="bg-light">
+    <td>Project</td>
+    <td class="right">Price</td>
+    <td class="right">Qty</td>
+    <td>Total</td>
+  </tr>
+
+  <tr class="item">
+    <td>
+      Ref: <%= @invoice.project.ref_id %><br>
+      <small class="text-muted"><%= @invoice.project.description %></small>
+    </td>
+    <td class="right">
+      <%= @invoice.item_price %>
+    </td>
+    <td class="right">
+      x <%= @invoice.item_qty %>
+    </td>
+    <td>
+      <%= @invoice.item_price * @invoice.item_qty %>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2"></td>
+    <td><b>Subtotal</b></td>
+    <td><%= @invoice.subtotal %></td>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="border-0"></td>
+    <td class="border-0"><b>Discount (<%= @invoice.discount %>%)</b></td>
+    <td>- <%= @invoice.discount_calculated %></td>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="border-0"></td>
+    <td class="border-0"><b>VAT (<%= @invoice.tax %>%)</b></td>
+    <td>+ <%= @invoice.tax_calculated %></td>
+  </tr>
+
+  <tr class="heading">
+    <td class="border-0" colspan="2"></td>
+    <td><b>TOTAL:</b></td>
+    <td>
+        <b><%= @invoice.total %></b>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="4" class="bg-light">
+      Notes:<br>
+      <small class="text-muted"><%= @invoice.notes %></small>
+    </td>
+  </tr>
+</table>
+
+<!-- <p>
   <strong>Bill from email:</strong>
   <%= @invoice.bill_from_email %>
 </p>
@@ -52,3 +152,4 @@
 
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
 <%= link_to 'Back', invoices_path %>
+-->

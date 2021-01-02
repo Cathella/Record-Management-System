@@ -13,7 +13,8 @@
         <th>Progress</th>
         <th>Work Type</th>
         <th>Client</th>
-        <th colspan="3" class="text-right">Actions</th>
+        <th>Assigned to</th>
+        <th colspan="3" class="text-center">Actions</th>
       </tr>
     </thead>
 
@@ -25,10 +26,10 @@
           </td>
           <td><%= project.progress %></td>
           <td><%= project.work_type %></td>
-          <td><%= link_to project.client.name, class: "text-info" %></td>
-          <td class="text-right">
+          <td><%= project.client.name %></td>
+          <td><%= project.assigned %></td>
+          <td class="text-center">
             <%= link_to 'Show', project, class: "btn btn-info mr-2" %>
-            <%= link_to 'Create Invoice', new_invoice_path, class: "btn btn-primary mr-2" %>
             <%= link_to 'Delete', project, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
           </td>
           <td></td>

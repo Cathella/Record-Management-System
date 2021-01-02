@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2021_01_01_151559) do
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.string "phone"
+    t.string "email"
     t.string "location"
     t.string "payment"
     t.datetime "created_at", null: false
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_01_01_151559) do
     t.string "progress"
     t.string "work_type"
     t.string "cost"
+    t.string "assigned"
     t.integer "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

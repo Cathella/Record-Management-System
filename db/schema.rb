@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_01_01_151559) do
     t.string "work_type"
     t.string "cost"
     t.string "assigned"
+    t.string "status"
     t.integer "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

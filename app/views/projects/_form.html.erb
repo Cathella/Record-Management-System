@@ -42,6 +42,11 @@
   </div>
 
   <div class="field mb-3">
+    <%= form.label :status, "Status" %>
+    <%= form.select :status,  ['Cancelled', 'Completed', 'In-progress'], {}, class: "custom-select" %>
+  </div>
+
+  <div class="field mb-3">
     <%= form.label :cost, "Project Cost" %>
     <%= form.text_field :cost, class: "form-control"%>
   </div>

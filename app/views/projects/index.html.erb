@@ -11,7 +11,7 @@
       <tr>
         <th>Ref ID</th>
         <th>Name</th>
-        <th>Progress</th>
+        <th>Status</th>
         <th>Work Type</th>
         <th>Client</th>
         <th>Assigned to</th>
@@ -28,7 +28,7 @@
           <td>
             <%= link_to project.name, project, class: "text-info" %>
           </td>
-          <td><%= project.progress %></td>
+          <td><%= project.status %></td>
           <td><%= project.work_type %></td>
           <td><%= project.client.name %></td>
           <td><%= project.assigned %></td>

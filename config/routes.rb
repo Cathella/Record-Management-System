@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :invoices
-  root to: 'projects#index'
+  get 'admin_sessions/new'
+  resources :admins
+
+  resources :admin_sessions
   
+  get 'home/dashboard'
+  root to: 'home#dashboard'
+
+  resources :invoices
   resources :projects
   resources :clients
 end

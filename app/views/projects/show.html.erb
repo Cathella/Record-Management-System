@@ -1,3 +1,5 @@
+<%= render "layouts/nav" %>
+
 <p id="notice"><%= notice %></p>
 
 <h1 class="font-weight-bold mb-5 text-center">
@@ -7,8 +9,8 @@
 <div class="row mb-5 text-muted">
   <div class="col-md-6 mx-auto bg-light py-4 text-center">
     <p>
-      <strong>Ref:</strong>
-      <%= @project.ref_id %>
+      <strong>Name:</strong>
+      <%= @project.name %>
     </p>
 
     <p>
@@ -17,13 +19,20 @@
     </p>
 
     <p>
-      <strong>Site measurement:</strong>
-      <%= @project.site_measurement %>
+      <strong>Site measurement Image:</strong>
+      <% if @project.image.attached? %>
+        <%= image_tag @project.image, style: "width: 250px; display: block; margin: 0 auto;" %>
+      <% end %>
     </p>
 
     <p>
       <strong>Progress:</strong>
       <%= @project.progress %>
+    </p>
+
+    <p>
+      <strong>Status:</strong>
+      <%= @project.status %>
     </p>
 
     <p>

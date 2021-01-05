@@ -1,18 +1,22 @@
 class InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
+  before_action :admin_authorize
 
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = Invoice.all
+    # @invoices = Invoice.all
+    @invoices = scope
   end
 
   # GET /invoices/1
   # GET /invoices/1.json
   def show
+    @invoice = scope.find(params[:id])
+
     respond_to do |format|
       format.html
-      format.pdf do 
+      format.pdf do
         render pdf: "Invoice No. #{@invoice.id}",
         page_size: 'A4',
         template: "invoices/show.html.erb",
@@ -83,5 +87,9 @@ class InvoicesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def invoice_params
       params.require(:invoice).permit(:bill_from_email, :bill_from_name, :item_qty, :item_price, :discount, :tax, :project_id, :notes)
+    end
+
+    def scope
+      ::Invoice.all
     end
 end

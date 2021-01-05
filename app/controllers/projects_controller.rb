@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :admin_authorize
 
   # GET /projects
   # GET /projects.json
@@ -69,6 +70,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:ref_id, :description, :site_measurement, :progress, :work_type, :cost, :client_id, :assigned)
+      params.require(:project).permit(:name, :description, :site_measurement, :progress, :work_type, :cost, :client_id, :assigned, :status, :image)
     end
 end

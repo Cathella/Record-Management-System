@@ -1,0 +1,11 @@
+<header class="py-4 border-bottom mb-5">
+      <nav class="">
+        <div class="text-right">
+          <a href="/" class="ml-5 text-muted">Dashboard</a>
+          <a href="/projects" class="ml-5 text-muted">Projects</a>
+          <a href="/clients" class="ml-5 text-muted">Clients</a>
+          <a href="/invoices" class="ml-5 text-muted">Invoices</a>
+          <%= link_to "Log Out", admin_session_path("current"), method: "delete", class: "ml-5 text-muted" %>
+        </div>
+      </nav>
+    </header>

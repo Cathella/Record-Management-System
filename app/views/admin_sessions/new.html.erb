@@ -1,0 +1,27 @@
+<div class="my-5 py-5">
+  <p class="text-uppercase text-center">Login</p>
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <%= form_tag admin_sessions_path do %>
+        <div class="row">
+          <div class="form-group col-md-12">
+            <div class="field mb-3">
+              <%= text_field_tag :username, params[:username], placeholder: "Username", class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <div class="field">
+              <%= password_field_tag :password, params[:password], placeholder: "Password", class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <div class="actions">
+              <%= submit_tag "Log In", class: "btn btn-primary w-100"%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+  

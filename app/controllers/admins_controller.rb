@@ -1,5 +1,6 @@
 class AdminsController < ApplicationController
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
+  before_action :admin_authorize, only: [:index, :show]
 
   # GET /admins
   # GET /admins.json
@@ -28,7 +29,7 @@ class AdminsController < ApplicationController
 
     respond_to do |format|
       if @admin.save
-        format.html { redirect_to @admin, notice: 'Admin was successfully created.' }
+        format.html { redirect_to admins_path, notice: 'Admin was successfully created.' }
         format.json { render :show, status: :created, location: @admin }
       else
         format.html { render :new }
@@ -69,6 +70,6 @@ class AdminsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def admin_params
-      params.require(:admin).permit(:username, :password_digest)
+      params.require(:admin).permit(:username, :password, :password_confirmation)
     end
 end

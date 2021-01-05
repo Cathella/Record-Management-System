@@ -11,17 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :username %>
-    <%= form.text_field :username %>
+    <%= form.text_field :username, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :password_digest %>
-    <%= form.text_field :password_digest %>
+  <div class="field mb-3">
+    <%= form.label :password, "Password" %>
+    <%= form.password_field :password, class: "form-control" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :password_confirmation, "Confirm Password" %>
+    <%= form.password_field :password_confirmation, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Add Manager", class: "btn btn-primary w-100" %>
   </div>
 <% end %>

@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 2021_01_01_151559) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "ref_id"
-    t.string "description"
+    t.string "name"
+    t.text "description"
     t.string "site_measurement"
     t.string "progress"
     t.string "work_type"

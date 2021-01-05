@@ -10,6 +10,7 @@
     <thead class="text-muted thead-light">
       <tr>
         <th>Ref ID</th>
+        <th>Name</th>
         <th>Progress</th>
         <th>Work Type</th>
         <th>Client</th>
@@ -22,7 +23,10 @@
       <% @projects.each do |project| %>
         <tr>
           <td>
-            <%= link_to project.ref_id, project, class: "text-info" %>
+            <%= link_to project.id, project, class: "text-info" %>
+          </td>
+          <td>
+            <%= link_to project.name, project, class: "text-info" %>
           </td>
           <td><%= project.progress %></td>
           <td><%= project.work_type %></td>

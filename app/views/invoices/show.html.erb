@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'DOWNLOAD PDF', invoice_path(@invoice, format: :pdf), class: "btn btn-outline-primary my-2 my-sm-0 mx-4" %>
+
 <table cellpadding="0" cellspacing="0" class="table mb-5">
   <tr class="top">
     <td colspan="4" class="border-0">
@@ -52,7 +54,7 @@
 
   <tr class="item">
     <td>
-      Ref: <%= @invoice.project.ref_id %><br>
+      Ref: <%= @invoice.project.name %><br>
       <small class="text-muted"><%= @invoice.project.description %></small>
     </td>
     <td class="right">
@@ -99,57 +101,3 @@
     </td>
   </tr>
 </table>
-
-<!-- <p>
-  <strong>Bill from email:</strong>
-  <%= @invoice.bill_from_email %>
-</p>
-
-<p>
-  <strong>Bill from name:</strong>
-  <%= @invoice.bill_from_name %>
-</p>
-
-<p>
-  <strong>Client:</strong>
-  <%= @invoice.project.client.name %>
-</p>
-
-<p>
-  <strong>Project ref:</strong>
-  <%= @invoice.project.ref_id %>
-</p>
-
-<p>
-  <strong>Work Type:</strong>
-  <%= @invoice.project.work_type %>
-</p>
-
-<p>
-  <strong>Item qty:</strong>
-  <%= @invoice.item_qty %>
-</p>
-
-<p>
-  <strong>Item price:</strong>
-  <%= @invoice.item_price %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @invoice.notes %>
-</p>
-
-<p>
-  <strong>Discount:</strong>
-  <%= @invoice.discount %>
-</p>
-
-<p>
-  <strong>Tax:</strong>
-  <%= @invoice.tax %>
-</p>
-
-<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>
--->

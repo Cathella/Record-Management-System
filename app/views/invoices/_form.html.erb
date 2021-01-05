@@ -37,7 +37,7 @@
           <div class="col-md-4">
             <div class="field">
               <%= form.label :item_ref, "Project" %>
-              <%= form.collection_select(:project_id, Project.all, :id, :ref_id, {}, class: "custom-select bg-light") %>
+              <%= form.collection_select(:project_id, Project.all, :id, :name, {}, class: "custom-select bg-light") %>
             </div>
           </div>
           <div class="col-md-4">

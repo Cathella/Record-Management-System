@@ -27,8 +27,12 @@
   </div>
 
   <div class="field mb-3">
-    <%= form.label :site_measurement, "Site Measurement" %>
-    <%= form.text_field :site_measurement, class: "form-control"%>
+    <% if @project.image.attached? %>
+      <%= image_tag @project.image, style: "width: 200px display: block" %>
+    <% end %>
+
+    <%= form.label :image, "Site Measurement Image" %>
+    <%= form.file_field :image, class: "form-control"%>
   </div>
 
   <div class="field mb-3">

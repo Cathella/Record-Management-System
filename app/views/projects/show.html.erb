@@ -17,8 +17,10 @@
     </p>
 
     <p>
-      <strong>Site measurement:</strong>
-      <%= @project.site_measurement %>
+      <strong>Site measurement Image:</strong>
+      <% if @project.image.attached? %>
+        <%= image_tag @project.image, style: "width: 250px; display: block; margin: 0 auto;" %>
+      <% end %>
     </p>
 
     <p>

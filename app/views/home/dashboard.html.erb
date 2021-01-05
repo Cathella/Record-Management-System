@@ -1,0 +1,36 @@
+<h1 class="font-weight-bold text-primary mb-5 pt-5">Overview</h1>
+<div class="row mb-5 pb-5">
+  <div class="col-md-3">
+    <div class="py-3 px-5 border border-info rounded shadow">
+      <h1 class="text-info font-weight-bold">
+        <%= @projects_inprogress %>
+      </h1>
+      <p class="text-muted">Projects<br>in-progress</p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="py-3 px-5 border border-danger rounded shadow">
+      <h1 class="text-danger font-weight-bold">
+        <%= @projects_canceled %>
+      </h1>
+      <p class="text-muted">Projects<br>canceled</p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="py-3 px-5 border border-success rounded shadow">
+      <h1 class="text-success font-weight-bold">
+        <%= @projects_completed %>
+      </h1>
+      <p class="text-muted">Projects<br>completed</p>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="py-3 px-5 border rounded shadow">
+      <h1 class="text-muted font-weight-bold">
+        <%= @projects %>
+      </h1>
+      <p class="text-muted">Projects<br>in total</p>
+    </div>
+  </div>
+
+</div>

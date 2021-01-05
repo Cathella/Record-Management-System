@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get 'home/dashboard'
+  root to: 'home#dashboard'
+
   resources :invoices
-  root to: 'projects#index'
-  
   resources :projects
   resources :clients
 end

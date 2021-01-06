@@ -29,7 +29,7 @@
         <td><%= invoice.total %></td>
         <td class="text-right">
           <%= link_to 'Preview', invoice, class: "btn btn-info mr-2"%>
-          <%= link_to 'Destroy', invoice, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Delete', invoice, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
     <% end %>

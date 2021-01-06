@@ -1,22 +1,23 @@
 <div class="my-5 py-5">
-  <p class="text-uppercase text-center">Login</p>
+  <h1 class="w-50 text-center mb-5 font-weight-bold mx-auto">Client Records Management System</h1>
+  <p class="text-uppercase text-center mt-5">Login</p>
   <div class="row">
     <div class="col-md-6 mx-auto">
       <%= form_tag admin_sessions_path do %>
         <div class="row">
           <div class="form-group col-md-12">
-            <div class="field mb-3">
-              <%= text_field_tag :username, params[:username], placeholder: "Username", class: "form-control" %>
+            <div class="field mb-2">
+              <%= text_field_tag :username, params[:username], placeholder: "Username", class: "form-control py-4" %>
             </div>
           </div>
           <div class="form-group col-md-12">
             <div class="field">
-              <%= password_field_tag :password, params[:password], placeholder: "Password", class: "form-control" %>
+              <%= password_field_tag :password, params[:password], placeholder: "Password", class: "form-control py-4" %>
             </div>
           </div>
           <div class="form-group col-md-12">
             <div class="actions">
-              <%= submit_tag "Log In", class: "btn btn-primary w-100"%>
+              <%= submit_tag "Log In", class: "btn btn-primary w-100", style: "font-size: 1.1em; padding: .6em 0" %>
             </div>
           </div>
         </div>

@@ -31,7 +31,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'wicked_pdf', github: 'mileszs/wicked_pdf'
-gem 'wkhtmltopdf-binary'
+# gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf_binary', '~> 0.12.3.2'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

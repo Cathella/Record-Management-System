@@ -13,12 +13,12 @@
 
   <div class="field mb-3">
     <%= form.label :name, "Name" %>
-    <%= form.text_field :name, class: "form-control" %>
+    <%= form.text_field :name, class: "form-control py-4" %>
   </div>
 
   <div class="field mb-3">
     <%= form.label :client_id, "Choose Client" %>
-    <%= form.collection_select(:client_id, Client.all, :id, :name, {}, class: "custom-select") %>
+    <%= form.collection_select(:client_id, Client.all, :id, :name, {}, class: "custom-select bg-light", style: "height: 3em") %>
   </div>
 
   <div class="field mb-3">
@@ -32,35 +32,35 @@
     <% end %>
 
     <%= form.label :image, "Site Measurement Image" %>
-    <%= form.file_field :image, class: "form-control"%>
+    <%= form.file_field :image, class: "form-control pt-2 bg-light", style: "height: 3em" %>
   </div>
 
   <div class="field mb-3">
     <%= form.label :progress, "Progress" %>
-    <%= form.text_field :progress, class: "form-control"%>
+    <%= form.text_field :progress, class: "form-control py-4"%>
   </div>
 
   <div class="field mb-3">
     <%= form.label :work_type, "Work Type" %>
-    <%= form.select :work_type,  ['Wardrobe', 'TV Stand', 'Bed', 'Kitchen'], {}, class: "custom-select" %>
+    <%= form.select :work_type,  ['Wardrobe', 'TV Stand', 'Bed', 'Kitchen'], {}, class: "custom-select bg-light", style: "height: 3em" %>
   </div>
 
   <div class="field mb-3">
     <%= form.label :status, "Status" %>
-    <%= form.select :status,  ['Cancelled', 'Completed', 'In-progress'], {}, class: "custom-select" %>
+    <%= form.select :status,  ['Cancelled', 'Completed', 'In-progress'], {}, class: "custom-select bg-light", style: "height: 3em"%>
   </div>
 
   <div class="field mb-3">
     <%= form.label :cost, "Project Cost" %>
-    <%= form.text_field :cost, class: "form-control"%>
+    <%= form.text_field :cost, class: "form-control py-4"%>
   </div>
 
   <div class="field mb-3">
     <%= form.label :assigned, "Assigned To" %>
-    <%= form.text_field :assigned, class: "form-control"%>
+    <%= form.text_field :assigned, class: "form-control py-4"%>
   </div>
 
   <div class="actions">
-    <%= form.submit "Create Project", class: "w-100 btn btn-primary" %>
+    <%= form.submit "Create Project", class: "w-100 btn btn-primary", style: "font-size: 1.1em; padding: .6em 0" %>
   </div>
 <% end %>

@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
-  before_action :admin_authorize
+  before_action :admin_authorize, only: [:dashboard]
   
+  def index
+  end
+
   def dashboard
     @projects = Project.all.count
     @projects_canceled = 0

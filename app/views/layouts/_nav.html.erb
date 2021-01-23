@@ -1,11 +1,27 @@
-<header class="py-4 border-bottom mb-5">
-      <nav class="">
-        <div class="text-right">
-          <a href="/" class="ml-5 text-muted">Dashboard</a>
-          <a href="/projects" class="ml-5 text-muted">Projects</a>
-          <a href="/clients" class="ml-5 text-muted">Clients</a>
-          <a href="/invoices" class="ml-5 text-muted">Invoices</a>
+  <header class="border-bottom mb-5">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand logo font-weight-bold" href="#">
+          <i class="far fa-lg p-3 rounded-circle fa-clipboard text-white bg-black mr-2"></i>Tidy
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon text-white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a href="/home/dashboard" class="ml-5 text-muted">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a href="/projects" class="ml-5 text-muted">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="/clients" class="ml-5 text-muted">Clients</a>
+            </li>
+            <li class="nav-item">
+              <a href="/invoices" class="ml-5 text-muted">Invoices</a>
+            </li>
+          </ul>
           <%= link_to "Log Out", admin_session_path("current"), method: "delete", class: "ml-5 text-muted" %>
         </div>
       </nav>
-    </header>
+  </header>

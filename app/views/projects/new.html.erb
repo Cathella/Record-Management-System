@@ -1,9 +1,11 @@
-<%= render "layouts/nav" %>
+<div class="container">
+  <%= render "layouts/nav" %>
+  <p id="notice"><%= notice %></p>
 
-<h1 class="font-weight-bold mb-5 text-center text-primary">New Project</h1>
-
-<div class="row mb-5">
-  <div class="col-md-6 mx-auto">
-    <%= render 'form', project: @project %>
+  <div class="row mb-5">
+    <div class="col-md-9 mx-auto">
+      <h1 class="font-weight-bold mb-5 text-info">Create a Project</h1>
+      <%= render 'form', project: @project %>
+    </div>
   </div>
 </div>

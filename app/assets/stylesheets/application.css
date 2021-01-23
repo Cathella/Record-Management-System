@@ -1,8 +1,43 @@
-body {
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.15em;
+#project_description {
+  height: 150px;
 }
 
-.textarea-height {
-  height: 92px !important;
+#invoice_notes {
+  height: 91px;
+}
+
+* {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+a {
+  /* text-decoration: underline; */
+}
+
+label,
+.btn{
+  font-size: 1.1em;
+}
+
+.bg-black {
+  background: #212529;
+}
+
+.rounded-btn {
+  border-radius: 3em;
+  padding: .8em 2.2em;
+  text-decoration: none;
+}
+
+nav li {
+  padding: 0 1em;
+}
+
+nav a {
+  text-decoration: none;
 }

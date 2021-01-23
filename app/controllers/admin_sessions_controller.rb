@@ -6,7 +6,7 @@ class AdminSessionsController < ApplicationController
     admin = Admin.find_by_username(params[:username])
     if admin && admin.authenticate(params[:password])
       session[:admin_id] = admin.id
-      redirect_to root_path, notice: 'Admin logged in'
+      redirect_to home_dashboard_path, notice: 'Admin logged in'
     else
       render :new, notice: 'Wrong Username or Password'
     end

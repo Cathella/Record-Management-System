@@ -1,8 +1,11 @@
-<%= render "layouts/nav" %>
+<div class="container">
+  <%= render "layouts/nav" %>
+  <p id="notice"><%= notice %></p>
 
-<h1>Editing Invoice</h1>
+  <h1>Editing Invoice</h1>
 
-<%= render 'form', invoice: @invoice %>
+  <%= render 'form', invoice: @invoice %>
 
-<%= link_to 'Show', @invoice %> |
-<%= link_to 'Back', invoices_path %>
+  <%= link_to 'Show', @invoice %> |
+  <%= link_to 'Back', invoices_path %>
+</div>

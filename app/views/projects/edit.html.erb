@@ -1,8 +1,11 @@
-<%= render "layouts/nav" %>
+<div class="container">
+  <%= render "layouts/nav" %>
+  <p id="notice"><%= notice %></p>
 
-<h1>Editing Project</h1>
+  <h1>Editing Project</h1>
 
-<%= render 'form', project: @project %>
+  <%= render 'form', project: @project %>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+  <%= link_to 'Show', @project %> |
+  <%= link_to 'Back', projects_path %>
+</div>

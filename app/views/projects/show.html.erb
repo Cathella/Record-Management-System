@@ -1,55 +1,56 @@
-<%= render "layouts/nav" %>
+<div class="container">
+  <%= render "layouts/nav" %>
+  <p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
+  <h1 class="font-weight-bold mb-5 text-center">
+    Project Details
+  </h1>
 
-<h1 class="font-weight-bold mb-5 text-center">
-  Project Details
-</h1>
+  <div class="row mb-5 text-muted">
+    <div class="col-md-6 mx-auto bg-light py-4 text-center">
+      <p>
+        <strong>Name:</strong>
+        <%= @project.name %>
+      </p>
 
-<div class="row mb-5 text-muted">
-  <div class="col-md-6 mx-auto bg-light py-4 text-center">
-    <p>
-      <strong>Name:</strong>
-      <%= @project.name %>
-    </p>
+      <p>
+        <strong>Description:</strong>
+        <%= @project.description %>
+      </p>
 
-    <p>
-      <strong>Description:</strong>
-      <%= @project.description %>
-    </p>
+      <p>
+        <strong>Site measurement Image:</strong>
+        <% if @project.image.attached? %>
+          <%= image_tag @project.image, style: "width: 250px; display: block; margin: 0 auto;" %>
+        <% end %>
+      </p>
 
-    <p>
-      <strong>Site measurement Image:</strong>
-      <% if @project.image.attached? %>
-        <%= image_tag @project.image, style: "width: 250px; display: block; margin: 0 auto;" %>
-      <% end %>
-    </p>
+      <p>
+        <strong>Progress:</strong>
+        <%= @project.progress %>
+      </p>
 
-    <p>
-      <strong>Progress:</strong>
-      <%= @project.progress %>
-    </p>
+      <p>
+        <strong>Status:</strong>
+        <%= @project.status %>
+      </p>
 
-    <p>
-      <strong>Status:</strong>
-      <%= @project.status %>
-    </p>
+      <p>
+        <strong>Type:</strong>
+        <%= @project.work_type %>
+      </p>
 
-    <p>
-      <strong>Type:</strong>
-      <%= @project.work_type %>
-    </p>
+      <p>
+        <strong>Cost:</strong>
+        <%= @project.cost %>
+      </p>
 
-    <p>
-      <strong>Cost:</strong>
-      <%= @project.cost %>
-    </p>
+      <p>
+        <strong>Client:</strong>
+        <%= link_to @project.client.name %>
+      </p>
 
-    <p>
-      <strong>Client:</strong>
-      <%= link_to @project.client.name %>
-    </p>
-
-    <!-- <%= link_to 'Edit', edit_project_path(@project) %> | -->
+      <!-- <%= link_to 'Edit', edit_project_path(@project) %> | -->
+    </div>
   </div>
 </div>

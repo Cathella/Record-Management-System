@@ -1,4 +1,7 @@
-<%= render "layouts/nav" %>
+<div class="container">
+  <%= render "layouts/nav" %>
+  <p id="notice"><%= notice %></p>
 
-<h1 class="font-weight-bold mb-4 pb-2 text-primary">New Invoice</h1>
-<%= render 'form', invoice: @invoice %>
+  <h1 class="font-weight-bold mb-4 pb-2 text-info">New Invoice</h1>
+  <%= render 'form', invoice: @invoice %>
+</div>

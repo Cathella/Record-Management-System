@@ -1,5 +1,9 @@
-.textarea-height {
-  height: 92px !important;
+#project_description {
+  height: 150px;
+}
+
+#invoice_notes {
+  height: 91px;
 }
 
 * {

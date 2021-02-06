@@ -15,17 +15,19 @@ h1 {
   font-size: 3em;
 }
 
-a {
-  /* text-decoration: underline; */
-}
-
 label,
-.btn{
+.btn {
   font-size: 1.1em;
 }
 
 .bg-black {
   background: #212529;
+}
+
+.bg-header {
+  background: url('/assets/docs.webp');
+  background-size: cover;
+  background-position: center;
 }
 
 .rounded-btn {

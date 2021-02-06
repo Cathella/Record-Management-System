@@ -9,7 +9,7 @@
   <div class="row mb-5 text-muted">
     <div class="col-md-6 text-dark">
       <div class="py-5 px-5 bg-green-light">
-        <p class="mb-3 ">
+        <p class="mb-3">
           <strong>Name:</strong><br>
           <span style="display: block; border: 1px dashed #609992;" class="p-2 mt-2">
           <%= @client.name %>
@@ -50,6 +50,7 @@
           <%= @client.created_at.strftime('%d/%m/%Y') %>
           </span>
         </p>
+        <%= link_to 'Edit Client', edit_client_path(@client), class: "btn bg-green text-white rounded-btn mt-3" %>
       </div>
     </div>
     <div class="col-md-5 mx-auto">

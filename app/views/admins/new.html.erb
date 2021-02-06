@@ -1,10 +1,22 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
-  
-  <div class="row mb-5">
-    <div class="col-md-6 mx-auto">
-      <h1 class="font-weight-bold mb-5 mt-5">Register your Business</h1>
-      <%= render 'form', admin: @admin %>
+<div style="background: #e7e5d0;">
+  <div class="container-fluid">
+    <div class="row mb-5">
+      <div class="col-lg-6 bg-header" style=""></div>
+      <div class="col-lg-6 py-5 bg-white">
+        <div class="w-75 mx-auto">
+          <div class="text-center">
+            <a class="navbar-brand logo font-weight-bold text-dark mt-5" href="/">
+              <i class="far fa-lg p-3 rounded-circle fa-clipboard text-white bg-black mr-2"></i>Tidy
+            </a>
+          </div>
+          <h2 class="font-weight-bold mb-5 mt-5 text-center" style="color: #609992">Register your Business</h2>
+          <%= render 'form', admin: @admin %>
+          <div class="mb-5 text-center">
+            Already registered? 
+            <a href="/admin_sessions/new" style="color: #609992">Login here</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

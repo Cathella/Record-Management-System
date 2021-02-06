@@ -1,31 +1,42 @@
-<div class="container">
-  <div class="my-5 py-5">
-    <div class="row">
-      <div class="col-md-6 mx-auto">
-        <p class="text-uppercase text-center mt-5">Login</p>
-        <div class="text-center">
-          <h1 class="font-weight-bold mx-auto">Tidy</h1>
-          <h4 class="mb-5 font-weight-bold mx-auto text-info">Client Records Management and Invoicing System</h4>
-        </div>
-        <%= form_tag admin_sessions_path do %>
-          <div class="row">
-            <div class="form-group col-md-12">
-              <div class="field mb-3">
-                <%= text_field_tag :username, params[:username], placeholder: "Username", class: "form-control py-4" %>
-              </div>
+<div style="background: #e7e5d0;">
+  <div class="container-fluid">
+    <div class="">
+      <div class="row">
+        <div class="col-lg-6 bg-header" style=""></div>
+        <div class="col-md-6 py-5 bg-white">
+          <div class="w-75 mx-auto">
+            <div class="text-center my-5">
+              <a class="navbar-brand logo font-weight-bold text-dark mt-5" href="/">
+                <i class="far fa-lg p-3 rounded-circle fa-clipboard text-white bg-black mr-2"></i>Tidy
+              </a>
             </div>
-            <div class="form-group col-md-12">
-              <div class="field mb-4">
-                <%= password_field_tag :password, params[:password], placeholder: "Password", class: "form-control py-4" %>
-              </div>
+            <div class="mx-5">
+              <%= form_tag admin_sessions_path do %>
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <div class="field mb-3">
+                      <%= text_field_tag :username, params[:username], placeholder: "Username", class: "form-control py-4" %>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <div class="field mb-3">
+                      <%= password_field_tag :password, params[:password], placeholder: "Password", class: "form-control py-4" %>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <div class="actions">
+                      <%= submit_tag "Log In", class: "btn bg-black text-white rounded-btn w-100", style: "" %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
             </div>
-            <div class="form-group col-md-12">
-              <div class="actions">
-                <%= submit_tag "Log In", class: "btn btn-info font-weight-bold rounded-btn w-100", style: "" %>
-              </div>
+            <div class="my-5 text-center pb-5">
+              Don't have an Account? 
+              <a href="/admins/new" style="color: #609992">Create one here</a>
             </div>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>

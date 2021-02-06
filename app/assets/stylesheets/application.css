@@ -30,6 +30,18 @@ label,
   background-position: center;
 }
 
+.bg-green-light {
+  background: #e7e5d0;
+}
+
+.bg-green {
+  background: #609992;
+}
+
+.text-green {
+  color: #609992;
+}
+
 .rounded-btn {
   border-radius: 3em;
   padding: .8em 2.2em;

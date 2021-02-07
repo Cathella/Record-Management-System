@@ -19,12 +19,12 @@
       </tr>
     </thead>
 
-    <tbody class="text-muted">
+    <tbody class="text-dark">
       <% @invoices.each do |invoice| %>
         <tr>
           <td><%= invoice.id %></td>
           <td><%= invoice.created_at.strftime('%d/%m/%Y') %></td>
-          <td><%= invoice.project.client.name if invoice.project %></td>
+          <td><%= invoice.project.client.name if invoice.project.client %></td>
           <td></td>
           <td><%= invoice.total %></td>
           <td class="text-right">

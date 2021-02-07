@@ -1,43 +1,67 @@
-<%= render "layouts/nav" %>
+<div class="container">
+  <%= render "layouts/nav" %>
+  <p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
+  <h2 class="font-weight-bold mb-5 text-green">
+    Client Details
+  </h2>
 
-<h1 class="font-weight-bold mb-5 text-center">
-  Client Details
-</h1>
+  <div class="row mb-5 text-muted">
+    <div class="col-md-6 text-dark">
+      <div class="py-5 px-5 bg-green-light">
+        <p class="mb-3">
+          <strong>Name:</strong><br>
+          <span style="display: block; border: 1px dashed #609992;" class="p-2 mt-2">
+          <%= @client.name %>
+          </span>
+        </p>
 
-<div class="row mb-5 text-muted">
-  <div class="col-md-6 mx-auto bg-light py-4 text-center">
-    <p>
-      <strong>Name:</strong>
-      <%= @client.name %>
-    </p>
+        <p class="mb-3">
+          <strong>Phone:</strong><br>
+          <span style="display: block; border: 1px dashed #609992;" class="p-2 mt-2">
+          <%= @client.phone %>
+          </span>
+        </p>
 
-    <p>
-      <strong>Phone:</strong>
-      <%= @client.phone %>
-    </p>
+        <p class="mb-3">
+          <strong>Email:</strong><br>
+          <span style="display: block; border: 1px dashed #609992;" class="p-2 mt-2">
+          <%= @client.email %>
+          </span>
+        </p>
 
-    <p>
-      <strong>Location:</strong>
-      <%= @client.location %>
-    </p>
+        <p class="mb-3">
+          <strong>Location:</strong><br>
+          <span style="display: block; border: 1px dashed #609992;" class="p-2 mt-2">
+          <%= @client.location %>
+          </span>
+        </p>
 
-    <p>
-      <strong>Payment:</strong>
-      <%= @client.payment %>
-    </p>
+        <p class="mb-3">
+          <strong>Deposit made:</strong><br>
+          <span style="display: block; border: 1px dashed #609992;" class="p-2 mt-2">
+          <%= @client.payment %>
+          </span>
+        </p>
 
-    <h4 class="border-top pt-3 mt-5 font-weight-bold">Projects:</h4>
-    
-    <p>
-      <ul>
-      <% @projects.each do |project| %>
-        <li>
-          <%= link_to project.ref_id, project, class: "text-info" %>
-        </li>
-      <% end %>
-      </ul>
-    </p>
+        <p>
+          <strong>Signed up date:</strong><br>
+          <span style="display: block; border: 1px dashed #609992;" class="p-2 mt-2">
+          <%= @client.created_at.strftime('%d/%m/%Y') %>
+          </span>
+        </p>
+        <%= link_to 'Edit Client', edit_client_path(@client), class: "btn bg-green text-white rounded-btn mt-3" %>
+      </div>
+    </div>
+    <div class="col-md-5 mx-auto">
+      <div class="py-4 px-5 bg-green">
+        <h4 class="font-weight-bold border-bottom pb-3 mb-3 text-white">Client Projects:</h4>
+        <% @projects.each do |project| %>
+          <p>
+            <%= link_to project.name, project, class: "text-white" %>
+          </p>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>  
+</div>

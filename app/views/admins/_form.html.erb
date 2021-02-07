@@ -1,4 +1,4 @@
-<%= form_with(model: admin, local: true) do |form| %>
+<%= form_with(model: admin, local: true, class: "mx-5") do |form| %>
   <% if admin.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
@@ -11,22 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field mb-3">
-    <%= form.label :username %>
-    <%= form.text_field :username, class: "form-control" %>
+  <div class="field mb-4">
+    <%= form.text_field :username, class: "form-control py-4", placeholder: "Username" %>
   </div>
 
-  <div class="field mb-3">
-    <%= form.label :password, "Password" %>
-    <%= form.password_field :password, class: "form-control" %>
+  <div class="field mb-4">
+    <%= form.password_field :password, class: "form-control py-4", placeholder: "Password" %>
   </div>
 
-  <div class="field mb-3">
-    <%= form.label :password_confirmation, "Confirm Password" %>
-    <%= form.password_field :password_confirmation, class: "form-control" %>
+  <div class="field mb-4">
+    <%= form.password_field :password_confirmation, class: "form-control py-4", placeholder: "Confirm Password" %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Add Manager", class: "btn btn-primary w-100" %>
+    <%= form.submit "Create Account", class: "btn bg-black text-white rounded-btn w-100 mb-5" %>
   </div>
 <% end %>

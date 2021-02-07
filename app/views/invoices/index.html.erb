@@ -1,37 +1,38 @@
-<%= render "layouts/nav" %>
+<div class="container">
+  <%= render "layouts/nav" %>
+  <p id="notice"><%= notice %></p>
 
-<p id="notice"><%= notice %></p>
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 class="font-weight-bold mb-5 text-green">Invoice <br>Records</h2>
+    <%= link_to '<i class="fas fa-plus mr-3"></i>New Invoice'.html_safe, new_invoice_path, class: "btn bg-black text-white rounded-btn" %>
+  </div>
 
-<div class="d-flex justify-content-between align-items-center">
-  <h1 class="font-weight-bold mb-5 text-primary">Invoice <br>Records</h1>
-  <%= link_to '<i class="fas fa-plus mr-3"></i>New Invoice'.html_safe, new_invoice_path, class: "btn btn-primary" %>
-</div>
-
-<table class="table table-hover mb-5">
-  <thead class="thead-light">
-    <tr>
-      <th>No.</th>
-      <th>Date</th>
-      <th>To</th>
-      <th>Status</th>
-      <th>Total</th>
-      <th colspan="3" class="text-right">Actions</th>
-    </tr>
-  </thead>
-
-  <tbody class="text-muted">
-    <% @invoices.each do |invoice| %>
+  <table class="table table-hover mb-5">
+    <thead class="bg-green text-white">
       <tr>
-        <td><%= invoice.id %></td>
-        <td><%= invoice.created_at.strftime('%d/%m/%Y') %></td>
-        <td><%= invoice.project.client.name %></td>
-        <td></td>
-        <td><%= invoice.total %></td>
-        <td class="text-right">
-          <%= link_to 'Preview', invoice, class: "btn btn-info mr-2"%>
-          <%= link_to 'Delete', invoice, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <th>No.</th>
+        <th>Date</th>
+        <th>To</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th colspan="3" class="text-right">Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody class="text-muted">
+      <% @invoices.each do |invoice| %>
+        <tr>
+          <td><%= invoice.id %></td>
+          <td><%= invoice.created_at.strftime('%d/%m/%Y') %></td>
+          <td><%= invoice.project.client.name %></td>
+          <td></td>
+          <td><%= invoice.total %></td>
+          <td class="text-right">
+            <%= link_to 'Preview Invoice', invoice, class: "text-green mr-2", style: "text-decoration: underline;" %>
+            <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, invoice, class: "btn text-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

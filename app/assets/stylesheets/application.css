@@ -1,8 +1,68 @@
-body {
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.15em;
+#project_description {
+  height: 150px;
 }
 
-.textarea-height {
-  height: 92px !important;
+#invoice_notes {
+  height: 91px;
+}
+
+* {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+label {
+  font-size: 1.1em;
+}
+
+.bg-black {
+  background: #212529;
+}
+
+.bg-header {
+  background: url('/assets/docs.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-green-light {
+  background: #e7e5d0;
+}
+
+.bg-green {
+  background: #609992;
+}
+
+.bg-green-dark {
+  background: #0c3827;
+}
+
+.bg-orange {
+  background: #efb061;
+}
+
+.text-green {
+  color: #609992;
+}
+
+.text-green-light {
+  color: #e7e5d0;
+}
+
+.rounded-btn {
+  border-radius: 3em;
+  padding: .8em 2.2em;
+  text-decoration: none;
+}
+
+nav li {
+  padding: 0 1em;
+}
+
+nav a {
+  text-decoration: none;
 }

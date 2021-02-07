@@ -1,4 +1,4 @@
-<%= form_with(model: project, local: true, class: "text-muted") do |form| %>
+<%= form_with(model: project, local: true, class: "text-dark") do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -11,56 +11,68 @@
     </div>
   <% end %>
 
-  <div class="field mb-3">
-    <%= form.label :name, "Name" %>
-    <%= form.text_field :name, class: "form-control py-4" %>
-  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="field mb-3">
+        <%= form.label :name, "Name" %>
+        <%= form.text_field :name, class: "form-control py-4" %>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="field mb-3">
+        <%= form.label :client_id, "Choose Client" %>
+        <%= form.collection_select(:client_id, Client.all, :id, :name, {}, class: "custom-select bg-light", style: "height: 3em") %>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="field mb-3">
+        <%= form.label :progress, "Progress" %>
+        <%= form.text_field :progress, class: "form-control py-4"%>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="field mb-3">
+        <%= form.label :work_type, "Work Type" %>
+        <%= form.select :work_type,  ['Wardrobe', 'TV Stand', 'Bed', 'Kitchen'], {}, class: "custom-select bg-light", style: "height: 3em" %>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="field mb-3">
+        <%= form.label :status, "Status" %>
+        <%= form.select :status,  ['Cancelled', 'Completed', 'In-progress'], {}, class: "custom-select bg-light", style: "height: 3em"%>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="field mb-3">
+        <%= form.label :cost, "Project Cost" %>
+        <%= form.text_field :cost, class: "form-control py-4"%>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="field mb-3">
+        <%= form.label :assigned, "Assigned To" %>
+        <%= form.text_field :assigned, class: "form-control py-4"%>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="field mb-3">
+        <%= form.label :description, "Description" %>
+        <%= form.text_area :description, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="field mb-3">
+        <%= form.label :image, "Project Images", class: "mt-4 mb-3" %>
+        <% if @project.image.attached? %>
+          <%= image_tag @project.image, style: "width: 200px; display: block" %>
+        <% end %>
 
-  <div class="field mb-3">
-    <%= form.label :client_id, "Choose Client" %>
-    <%= form.collection_select(:client_id, Client.all, :id, :name, {}, class: "custom-select bg-light", style: "height: 3em") %>
-  </div>
+        <%= form.file_field :image, class: "form-control pt-2 bg-light mt-3", style: "height: 3em" %>
+      </div>
+    </div>
 
-  <div class="field mb-3">
-    <%= form.label :description, "Description" %>
-    <%= form.text_area :description, class: "form-control" %>
-  </div>
-
-  <div class="field mb-3">
-    <% if @project.image.attached? %>
-      <%= image_tag @project.image, style: "width: 200px display: block" %>
-    <% end %>
-
-    <%= form.label :image, "Site Measurement Image" %>
-    <%= form.file_field :image, class: "form-control pt-2 bg-light", style: "height: 3em" %>
-  </div>
-
-  <div class="field mb-3">
-    <%= form.label :progress, "Progress" %>
-    <%= form.text_field :progress, class: "form-control py-4"%>
-  </div>
-
-  <div class="field mb-3">
-    <%= form.label :work_type, "Work Type" %>
-    <%= form.select :work_type,  ['Wardrobe', 'TV Stand', 'Bed', 'Kitchen'], {}, class: "custom-select bg-light", style: "height: 3em" %>
-  </div>
-
-  <div class="field mb-3">
-    <%= form.label :status, "Status" %>
-    <%= form.select :status,  ['Cancelled', 'Completed', 'In-progress'], {}, class: "custom-select bg-light", style: "height: 3em"%>
-  </div>
-
-  <div class="field mb-3">
-    <%= form.label :cost, "Project Cost" %>
-    <%= form.text_field :cost, class: "form-control py-4"%>
-  </div>
-
-  <div class="field mb-3">
-    <%= form.label :assigned, "Assigned To" %>
-    <%= form.text_field :assigned, class: "form-control py-4"%>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Create Project", class: "w-100 btn btn-primary", style: "font-size: 1.1em; padding: .6em 0" %>
-  </div>
-<% end %>
+    <div class="col-lg-12 mt-3">
+      <div class="actions">
+        <%= form.submit "Create Project", class: "btn bg-black text-white rounded-btn" %>
+      </div>
+  <% end %>

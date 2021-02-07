@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :admin_sessions
   
   get 'home/dashboard'
-  root to: 'home#dashboard'
+  root to: 'home#index'
 
   resources :invoices
   resources :projects

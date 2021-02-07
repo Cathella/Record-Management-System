@@ -37,8 +37,20 @@ label {
   background: #609992;
 }
 
+.bg-green-dark {
+  background: #0c3827;
+}
+
+.bg-orange {
+  background: #efb061;
+}
+
 .text-green {
   color: #609992;
+}
+
+.text-green-light {
+  color: #e7e5d0;
 }
 
 .rounded-btn {

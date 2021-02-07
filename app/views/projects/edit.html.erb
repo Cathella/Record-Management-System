@@ -2,10 +2,17 @@
   <%= render "layouts/nav" %>
   <p id="notice"><%= notice %></p>
 
-  <h1>Editing Project</h1>
+  <h2 class="mb-5 text-center font-weight-bold text-green">Editing Project</h2>
 
-  <%= render 'form', project: @project %>
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <div class="px-5 bg-green-light py-5">
+        <%= render 'form', project: @project %>
+      </div>
+    </div>
+  </div>
 
-  <%= link_to 'Show', @project %> |
-  <%= link_to 'Back', projects_path %>
+  <div class="mt-4 mb-5 text-center">
+    <%= link_to 'Back to Projects', projects_path, class: "text-green" %>
+  </div>
 </div>
